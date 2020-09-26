@@ -31,7 +31,7 @@ def create_figure():
     print(lines)
     fig = Figure()
     axis = fig.add_subplot(1, 1, 1)
-    xs = range(11)
+    xs = range(36)
     ys = lines
     axis.axis(ymin=40, ymax=400)
     axis.spines['bottom'].set_color('#FFFFFF')
@@ -56,6 +56,7 @@ def create_figure():
         which='both',
         labelsize=16)
     axis.scatter(xs, ys, s=100)
+    axis.grid(b=True, which="both", axis="y", linewidth=1)
     return fig
 
 
@@ -73,9 +74,9 @@ def create_figure2():
     lines = text_file.read().split(',')
     lines = [int(i) for i in lines]
     print(lines)
-    fig = Figure(figsize=(16, 4))
+    fig = Figure(figsize=(40, 10))
     axis = fig.add_subplot(1, 1, 1)
-    xs = range(11)
+    xs = range(36)
     ys = lines
     axis.axis(ymin=40, ymax=400)
     axis.spines['bottom'].set_color('#FFFFFF')
@@ -98,9 +99,9 @@ def create_figure2():
     axis.tick_params(
         axis='y',
         which='both',
-        labelsize=26)
-    axis.scatter(xs, ys, s=300)
-
+        labelsize=69)
+    axis.scatter(xs, ys, s=1500)
+    axis.grid(b=True, which="both", axis="y", linewidth=2.5)
     return fig
 
 
