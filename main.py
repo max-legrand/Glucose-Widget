@@ -48,6 +48,7 @@ def get_data(sessionID):
         data.reverse()
     else:
         print((connection2.code))
+    return (glucose, trend, data)
 
 
 def get_session():
