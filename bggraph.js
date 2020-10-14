@@ -13,7 +13,7 @@ if (config.runsInWidget) {
     let widget = await createWidget(res.bg, "#212121")
     Script.setWidget(widget)      
     Script.complete()
-}
+} Safari.open("shortcuts://run-shortcut?name=SpringBoard&silent=true")
 
 async function createWidget(pretitle, color) {
     let w = new ListWidget()

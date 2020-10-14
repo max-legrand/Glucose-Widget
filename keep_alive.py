@@ -33,6 +33,8 @@ def create_figure():
     axis = fig.add_subplot(1, 1, 1)
     xs = range(36)
     ys = lines
+    # axis.xlabel(" ")
+    # axis.ylabel("mg/dL")
     axis.axis(ymin=40, ymax=400)
     axis.spines['bottom'].set_color('#FFFFFF')
     axis.spines['top'].set_color('#FFFFFF')
@@ -46,17 +48,19 @@ def create_figure():
     axis.xaxis.label.set_color('#FFFFFF')
     axis.set_facecolor("#212121")
     axis.tick_params(
-        axis='x',
-        which='both',
-        bottom=False,
-        top=False,
+        axis='x',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
+        bottom=False,      # ticks along the bottom edge are off
+        top=False,         # ticks along the top edge are off
         labelbottom=False)
     axis.tick_params(
-        axis='y',
-        which='both',
+        axis='y',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
         labelsize=16)
-    axis.scatter(xs, ys, s=100)
+    axis.scatter(xs, ys, s=50, color="#eb349e")
+    axis.set_axisbelow(True)
     axis.grid(b=True, which="both", axis="y", linewidth=1)
+
     return fig
 
 
@@ -74,11 +78,13 @@ def create_figure2():
     lines = text_file.read().split(',')
     lines = [int(i) for i in lines]
     print(lines)
-    fig = Figure(figsize=(40, 10))
+    fig = Figure(figsize=(40, 15))
     axis = fig.add_subplot(1, 1, 1)
     xs = range(36)
     ys = lines
-    axis.axis(ymin=40, ymax=400)
+    # axis.xlabel(" ")
+    # axis.ylabel("mg/dL")
+    axis.axis(ymin=40, ymax=350)
     axis.spines['bottom'].set_color('#FFFFFF')
     axis.spines['top'].set_color('#FFFFFF')
     axis.spines['right'].set_color('#FFFFFF')
@@ -91,17 +97,19 @@ def create_figure2():
     axis.xaxis.label.set_color('#FFFFFF')
     axis.set_facecolor("#212121")
     axis.tick_params(
-        axis='x',
-        which='both',
-        bottom=False,
-        top=False,
+        axis='x',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
+        bottom=False,      # ticks along the bottom edge are off
+        top=False,         # ticks along the top edge are off
         labelbottom=False)
     axis.tick_params(
-        axis='y',
-        which='both',
-        labelsize=69)
-    axis.scatter(xs, ys, s=1500)
+        axis='y',          # changes apply to the x-axis
+        which='both',      # both major and minor ticks are affected
+        labelsize=50)
+    axis.set_axisbelow(True)
     axis.grid(b=True, which="both", axis="y", linewidth=2.5)
+    axis.scatter(xs, ys, s=1500, color="#eb349e")
+    axis.set_yscale("linear")
     return fig
 
 
